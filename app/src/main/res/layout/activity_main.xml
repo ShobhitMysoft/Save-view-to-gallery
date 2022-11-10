@@ -3,31 +3,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        android:background="@mipmap/ic_launcher"
         android:gravity="bottom"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@mipmap/ic_launcher"
+            android:scaleType="fitXY"/>
 
         <TextView
             android:id="@+id/text"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable." />
+            android:padding="16dp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="add text" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="20dp">
+        android:layout_marginHorizontal="16dp"
+        android:orientation="horizontal">
 
         <EditText
             android:id="@+id/et"
@@ -45,12 +55,51 @@
             android:text="Add" />
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:hint="Choose Text Color :"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/black_btn"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:text="Black"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:background="@color/black"/>
+
+        <TextView
+            android:id="@+id/white_btn"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:text="White"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:background="#DDDDDD"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/change_img_btn"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:text="change Image" />
 
     <Button
         android:id="@+id/save_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_gravity="bottom"
         android:text="save" />
 
 </LinearLayout>
